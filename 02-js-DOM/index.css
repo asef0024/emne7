@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+main {
+    display: flex;
+
+} 
+ 
+h1 {
+    text-align: center;
+} 
+
+
+img {
+    width: 100%;
+}
+.sectionwrapper {
+    border: solid black;
+    padding: 10px;
+    margin: 20px;
+} 
+
+footer {
+    text-align: center;
+    border: solid black;
+    padding: 10px;
+    margin: 20px;
+} 
+
+
+@media (min-width:1000px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+        flex-direction: column;
+    }
