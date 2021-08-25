@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Document</title>
+    <style>
+      section {
+        display: flex;
+      }
 
-<style>
-    * {
-    box-sizing: border-box;
-}
-main {
-    display: flex;
-} 
+      article {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 20px;
+        flex-basis: 50%;
+      }
 
-article {
-    flex-basis: 50%;
-}
-
-h1, footer {
-    text-align: center;
-} 
-img {
-    width: 100%;
-}
-
-
-footer {
-    text-align: center;
-    border: 1px solid black;
-    padding: 10px 0;
-    margin: 20px;
-} 
-
-</style>
-
-</head>
-<body>
+      h1,
+      footer {
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+      header,
+      footer {
+        text-align: center;
+        border: 1px solid black;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
     <header>
-    <h1>Titel</h1>
-</header>
-<main>
-    <h2>Undertitel</h2>
-    <section>
+      <h1>Titel</h1>
+    </header>
+
+    <main>
+      <h2>Undertitel</h2>
+
+      <section>
         <article>
-        <img src="natur1.jpg" alt="natur1">
-        <h3>Article 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni ut omnis, maiores praesentium unde saepe id quae ab debitis voluptates repellendus ipsum sunt aspernatur repudiandae dolore cumque nobis eos sint!</p>
+          <img src="natur1.jpg" alt="natur1" />
+          <h3>Article 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni ut
+            omnis, maiores praesentium unde saepe id quae ab debitis voluptates
+            repellendus ipsum sunt aspernatur repudiandae dolore cumque nobis
+            eos sint!
+          </p>
         </article>
-    <article>
-    <img src="natur2.jpg" alt="natur2">
-        
-           <h3>Article 2</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni ut omnis, maiores praesentium unde saepe id quae ab debitis voluptates repellendus ipsum sunt aspernatur repudiandae dolore cumque nobis eos sint!</p>
-    </article>
-    </section>
-</main>
-<footer>This is the footer</footer>
 
+        <article>
+          <img src="natur2.jpg" alt="natur2" />
 
-<script>
- const overskrift = document.querySelector ("h1");
-overskrift.textContent;
+          <h3>Article 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni ut
+            omnis, maiores praesentium unde saepe id quae ab debitis voluptates
+            repellendus ipsum sunt aspernatur repudiandae dolore cumque nobis
+            eos sint!
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>This is the footer</p>
+    </footer>
 
- console.log(overskrift.textContent);
-
-
-</script>
-
-</body>
+    <script>
+      const overskrift = document.querySelector("h1");
+      const sektion = document.querySelector("section");
+      const artikel = document.querySelector("article");
+      const billede = document.querySelector("article:nth-child(2) img");
+      console.log(overskrift, sektion, billede, artikel);
+    </script>
+  </body>
 </html>
