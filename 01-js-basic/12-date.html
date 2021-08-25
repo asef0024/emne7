@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tema7</title>
+  </head>
+  <body>
+    <div>
+      <p>Indtast din alder</p>
+      <input type="text" id="alderEgen" />
+
+      <p>Indtast din dates alder</p>
+      <input type="text" id="alderDate" />
+      <button>Resultat</button>
+    </div>
+    <script>
+      let min;
+      let max;
+      let alderEgen;
+      let alderDate;
+
+      document.querySelector("button").addEventListener("click", buttonClicked);
+
+      function buttonClicked() {
+        alderEgen = document.querySelector("#alderEgen").value;
+        alderDate = document.querySelector("#alderDate").value;
+
+        min = Math.round(alderEgen / 2 + 7);
+        max = Math.round(alderEgen - 7) * 2;
+
+        if (
+          !Number(alderEgen) ||
+          alderEgen < 15 ||
+          !Number(alderDate) ||
+          alderDate < 15
+        ) {
+          console.log("Du skal være over 15 år");
+        } else {
+          if (alderEgen >= min && alderDate <= max) {
+            console.log("Ok, det er passende");
+          } else if (alderDate <= min) {
+            console.log(
+              "Du er " +
+                alderEgen +
+                " og din date er " +
+                alderDate +
+                "\nDin date er for " +
+                (min - alderDate) +
+                " år for ung"
+            );
+          } else if (alderEgen >= max) {
+            console.log(
+              "Du er " +
+                alderEgen +
+                " og din date er " +
+                alderDate +
+                "\nDin date er " +
+                (alderDate - max) +
+                " år for gammel!"
+            );
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
