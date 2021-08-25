@@ -74,12 +74,12 @@
       const overskrift = document.querySelector("h1");
       const sektion = document.querySelector("section");
       const artikel = document.querySelector("article");
-      const h3 = document.querySelector("article h3");
       const billede = document.querySelector("article:nth-child(2) img");
       console.log(overskrift, sektion, billede, artikel);
 
       overskrift.textContent = "noget helt andet";
-      h3.textContent = "En hel ny overskrift";
+      billede.src = "human1.jpg";
+      billede.alt = "ny tekst";
     </script>
   </body>
 </html>
