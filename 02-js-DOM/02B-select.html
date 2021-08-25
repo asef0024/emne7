@@ -4,68 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
     <title>Document</title>
-    <style>
-        * {
-        box-sizing: border-box;
-    }
-    main {
-        display: flex;
-        
-    } 
-    
-    article {
-        border:1px solid black;
-    padding: 10px;
+
+<style>
+    * {
+    box-sizing: border-box;
+}
+main {
+    display: flex;
+} 
+
+article {
+    flex-basis: 50%;
+}
+
+h1, footer {
+    text-align: center;
+} 
+img {
+    width: 100%;
+}
+
+
+footer {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px 0;
     margin: 20px;
-        flex-basis: 50%;
-    }
-    
-    h2 {
-    }
-    h1, footer {
-        text-align: center;
-    } 
-    img {
-        width: 100%;
-    }
-    footer {
-        text-align: center;
-        border: 1px solid black;
-        padding: 10px 0;
-        margin: 20px;
-    } 
-    
-    </style>
+} 
+
+</style>
+
 </head>
 <body>
     <header>
     <h1>Titel</h1>
 </header>
 <main>
-
     <h2>Undertitel</h2>
-
     <section>
         <article>
         <img src="natur1.jpg" alt="natur1">
         <h3>Article 1</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni ut omnis, maiores praesentium unde saepe id quae ab debitis voluptates repellendus ipsum sunt aspernatur repudiandae dolore cumque nobis eos sint!</p>
-    </article>
-    </section>
-
-    <section>
-          <article>
-        <img src="natur2.jpg" alt="natur2">
+        </article>
+    <article>
+    <img src="natur2.jpg" alt="natur2">
         
            <h3>Article 2</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni ut omnis, maiores praesentium unde saepe id quae ab debitis voluptates repellendus ipsum sunt aspernatur repudiandae dolore cumque nobis eos sint!</p>
     </article>
     </section>
 </main>
-<footer>
-    <p>This is the footer</p>
-</footer>
+<footer>This is the footer</footer>
+
+
+<script>
+ const krop = document.querySelector ("body");
+ const overskrift = document.querySelector ("h1");
+ const img2 = document.querySelector("article:nth-child(2) img");
+const footer = document.querySelector("footer");
+ console.log(krop, overskrift, img2, footer);
+
+
+</script>
+
 </body>
 </html>
