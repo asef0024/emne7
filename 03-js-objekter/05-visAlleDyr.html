@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      article {
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        width: 10%;
+      }
+    </style>
+    <article id="liste"></article>
+
+    <script>
+      const dyr = [
+        {
+          navn: "Gris",
+          type: "pattedyr",
+          billede: "http://mabe-kea.dk/E19/pics/pig.png",
+          levested: "svinefarme",
+        },
+
+        {
+          navn: "Frø",
+          type: "amfibie",
+          billede: "http://mabe-kea.dk/E19/pics/frog.png",
+          levested: "vandhullet",
+        },
+
+        {
+          navn: "Ræv",
+          type: "pattedyr",
+          billede: "http://mabe-kea.dk/E19/pics/fox.png",
+          levested: "skoven",
+        },
+
+        {
+          navn: "Sild",
+          type: "fisk",
+          billede: "http://mabe-kea.dk/E19/pics/sild.png",
+          levested: "havet",
+        },
+
+        {
+          navn: "Krokodille",
+          type: "krybdyr",
+          billede: "http://mabe-kea.dk/E19/pics/kroko.png",
+          levested: "floden",
+        },
+      ];
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        const artikel = document.querySelector("article");
+        const listevisning = document.querySelector("#listevisning");
+        dyr.forEach((etDyr) => {
+          console.log(etDyr.navn);
+          artikel.innerHTML += `<p>Navn: ${etDyr.navn} Type: ${etDyr.type} Levested: ${etDyr.levested} </p> `;
+        });
+        //artikel.appendChild(gris);
+        //artikel.appendChild(img);
+      }
+
+      console.log(dyr);
+    </script>
+  </body>
+</html>
