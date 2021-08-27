@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 10px;
+      }
+      article {
+        border: 3px solid #9999;
+      }
+      img {
+        width: 20%;
+      }
+    </style>
+
+    <section></section>
+    <template>
+      <article>
+        <h3 class="mærke"></h3>
+        <p class="model"></p>
+        <p class="motor"></p>
+        <p class="km"></p>
+        <p class="udstyr"></p>
+      </article>
+    </template>
+
+    <script>
+      const container = document.querySelector("section");
+      const dyrTemplate = document.querySelector("template");
+
+      const fil = "nyArray.json";
+
+      async function hentData() {
+        const resultat = await fetch(fil);
+        const json = await resultat.json();
+        vis(json);
+      }
+
+      function vis(biler) {
+        console.log(biler);
+
+        biler.forEach((enBil) => {
+          let klon = dyrTemplate.cloneNode(true).content;
+          klon.querySelector("h3").textContent = "Mærke: " + enBil.mærke;
+          klon.querySelector(".model").textContent = "Model: " + enBil.model;
+          klon.querySelector(".motor").textContent = "Motor: " + enBil.motor;
+          klon.querySelector(".km").textContent = "km: " + enBil.km;
+          klon.querySelector(".udstyr").textContent = "Udstyr: " + enBil.udstyr;
+          //klon.querySelector("img").src = enBil.billede;
+          container.appendChild(klon);
+        });
+      }
+
+      hentData();
+    </script>
+  </body>
+</html>
