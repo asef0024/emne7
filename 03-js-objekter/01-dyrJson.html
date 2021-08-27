@@ -74,8 +74,18 @@
         const container = document.querySelector("section");
         const dyrTemplate = document.querySelector("template");
 
-        //const artikel = document.querySelector("article");
-        //const listevisning = document.querySelector("#listevisning");
+        const fil = "alleDyr.json";
+
+        async function hentData(fil) {
+          const resultat = await fetch(fil);
+          const json = await resultat.json();
+          vis(json);
+        }
+
+        function vis(json) {
+          console.log(json);
+        }
+
         dyr.forEach((etDyr) => {
           let klon = dyrTemplate.cloneNode(true).content;
           klon.querySelector("h3").textContent = etDyr.navn;
@@ -83,11 +93,7 @@
           klon.querySelector(".sted").textContent = etDyr.levested;
           klon.querySelector("img").src = etDyr.billede;
           container.appendChild(klon);
-
-          //artikel.innerHTML += `<p>Navn: ${etDyr.navn} Type: ${etDyr.type} Levested: ${etDyr.levested} </p> `;
         });
-        //artikel.appendChild(gris);
-        //artikel.appendChild(img);
       }
 
       console.log(dyr);
