@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+img {
+    width: 100%;
+}
+
+nav {
+    font-family: 'Spartan';
+}
+
+figure {
+    font-family: 'Spartan';
+    font-style: italic;
+    font-size: 0.6rem;
+}
+
+ul {
+    font-family: 'Spartan';
+}
+
+h1 {
+    font-family: 'Changa';
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 7px 7px;
+}
+
+h2,
+h3 {
+    font-family: 'Changa';
+    font-size: 1em;
+    color: #000000;
+}
+
+
+p {
+    font-family: 'Spartan';
+    font-size: 1em;
+    color: #000000;
+    line-height: 1.4;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+p + h2,
+h3 {
+    margin-top: 2px;
+}
+
+figure {
+    padding: 2px;
+    margin: 5px;
+}
+
+.sectionwrapper {
+    border: solid red;
+    padding: 10px;
+    margin: 20px;
+}
+
+/*********** NAV START *********/
+
+header nav a:link {
+    color: #2671B2
+}
+
+header nav a:visited {
+    color: #2671B2
+}
+
+header nav a:hover {
+    color: #F19101
+}
+
+header nav a:active {
+    color: #2671B2
+}
+
+header {
+    position: fixed;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    flex-direction: column;
+}
+
+header nav a {
+    flex-basis: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/*
+@media (min-width:750px) {
+    header nav {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    header nav a {
+        flex-basis: 50px;
+        font-size: 0.8rem;
+        padding: 0 2px;
+    }
+
+    header nav a:last-child {
+        border: none;
+    }
+}
+*/
+
+
+@media (min-width:1000px) {
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+        flex-direction: column;
+    }
+
+    header nav a {
+        flex-basis: 20px;
+        font-size: 0.8rem;
+    }
+
+    header nav a:last-child {
+        border: none;
+    }
+}
+
+
+
+/******** NAV SLUT ***************/
+/******** Splash start ***********/
+
+#splash {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(splash_web.jpg);
+    background-size: cover;
+    background-position: 70% 52%;
+    max-width: none;
+    max-width: none;
+}
+
+
+/******** Splash slut ************/
+
+
+/******** OM start *********/
+
+
+#om .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#om .column {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+/******** OM slut *********/
+
+/******** Eksempler start *********/
+
+
+
+#eksempler .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#eksempler .column {
+    flex-grow: 4;
+    flex-basis: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+
+/******** Eksempler slut *********/
+
+/******** Typografi start *********/
+
+#typografi .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#typografi .column_wide {
+    flex-grow: 3;
+    flex-basis: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#typografi .column_wide .top {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+}
+
+#typografi .column_wide .top .image,
+#typografi .column_wide .top .txt {
+    flex-grow: 1;
+    flex-basis: 300px;
+    margin-right: 5px;
+}
+
+
+
+#typografi .column_wide .bottom {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+#typografi .column_wide .bottom .image,
+#typografi .column_wide .bottom .txt {
+    flex-grow: 1;
+    flex-basis: 300px;
+    margin-right: 5px;
+    margin-top: auto;
+}
+
+
+#typografi .column_narrow {
+    flex-grow: 1;
+    flex-basis: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/******** Typografi slut*********/
+
+/******** Farver start **********/
+
+
+#komposition_og_farver .sectionwrapper {
+    flex-grow: 4;
+    flex-basis: 400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#komposition_og_farver .column_wide {
+    flex-grow: 1;
+    flex-basis: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+#komposition_og_farver .column_narrow {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+#komposition_og_farver .column_narrow figure {
+    margin-top: 43px;
+}
+
+#colors {
+    margin-right: 5px;
+    padding: 2px;
+}
+
+/******** Farver slut*********/
+
+/******** Links start*********/
+
+#links .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#links .column {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+#links .column {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+/******** Links slut*********/
+
+/******** Ekstra start*********/
+
+
+#ekstra .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ekstra .column_left {
+    flex-grow: 1;
+    flex-basis: 500px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+}
+
+#ekstra .column_right {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+/******** Ekstra slut*********/
+
+/******** Footer start*********/
+
+footer p {
+    text-align: center;
+}
+
+/******** Footer slut *********/
+
+
+/******** Styletile start*********/
+
+
+img[src="favicon.png"] {
+    width: 265px;
+    height: 265px;
+}
+
+#colors div {
+    width: 100px;
+    height: 100px;
+    border: solid white;
+    margin-bottom: 5px;
+}
+
+
+.farve_1 {
+    background-color: #E22321;
+    margin-top: 30px;
+
+}
+
+.farve_2 {
+    background-color: #F3E500;
+}
+
+.farve_3 {
+    background-color: #2671B2;
+}
+
+.farve_4 {
+    background-color: #008E5C;
+}
+
+.farve_5 {
+    background-color: #6D388A;
+}
+
+.farve_6 {
+    background-color: #F19101;
+}
+
+
+a.link:link {
+    color: #000000;
+    font-family: 'Spartan';
+    font-size: 1rems;
+}
+
+a.link:hover {
+    color: #008E5C;
+}
+
+
+/********Styletile slut*********/
+
+
+
+@media only screen and (min-width:812px) {
+    #eksempler .column {
+        flex-basis: 226px;
+    }
+}
+
+@media (max-width:500px) {
+    html {
+        font-size: 14px;
+    }
+
+    .content1 {
+        flex-basis: 700px;
+    }
+
+    section {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (min-width:510px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .content1 {
+        flex-basis: 700px;
+        display: flex;
+        padding: 20px 20px 0 20px;
+        margin: 0 -16px;
+    }
+
+
+
+    section {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width:800px) {
+
+    html {
+        font-size: 16px;
+    }
+
+
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .content1 {
+        flex-basis: 700px;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    #komposition_og_farver .sectionwrapper {
+        flex-grow: 4;
+        flex-basis: 400px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+
+    #komposition_og_farver .column_wide {
+        flex-grow: 1;
+        flex-basis: 500px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+}

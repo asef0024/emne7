@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Restaurant Babushka</title>
+  </head>
+  <body>
+    <style>
+      .myDiv {
+        position: relative;
+        z-index: 1;
+      }
+
+      .myDiv:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url(background.jpg) center center;
+        background-size: contain;
+        opacity: 0.6;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      @font-face {
+        font-family: kremlinFont;
+        src: url(kremlin.ttf);
+      }
+
+      p {
+        font-family: "Russo One", sans-serif;
+      }
+
+      h3 {
+        font-family: "Russo One", sans-serif;
+      }
+
+      header {
+        margin: 2rem;
+      }
+      h1 {
+        font-family: kremlinFont, sans-serif;
+        font-size: 8rem;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 0;
+        color: red;
+      }
+      h1 span {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      header button {
+        font-size: 1rem;
+        font-family: "Russo One", sans-serif;
+        position: relative;
+      }
+
+      /******** Splash start ***********/
+
+      #splash {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(background.jpg);
+        background-size: cover;
+        background-position: 70% 52%;
+        max-width: none;
+        max-width: none;
+      }
+
+      /******** Splash slut ************/
+
+      h2 {
+        font-family: "Russo One", sans-serif;
+        text-align: center;
+        font-size: 5rem;
+        color: darkblue;
+        margin: 1rem;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 10px;
+      }
+
+      #menu {
+        border: 3px solid blue;
+        background-color: rgba(255, 255, 255, 0.6);
+
+        display: flex;
+        margin: 2rem;
+      }
+
+      #menu div {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+      }
+      #menu img {
+        width: 40%;
+        margin: 1rem;
+        object-fit: contain;
+        transition: transform 0.2s;
+      }
+
+      #menu img:hover {
+        transform: scale(2);
+      }
+
+      #menu #info {
+        font-family: "Russo One", sans-serif;
+        display: inline-block;
+        width: 100px;
+      }
+
+      div p {
+        margin: 0.1;
+      }
+
+      .valgt {
+        background-color: yellow;
+      }
+
+      #popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #00000099;
+        overflow: scroll;
+      }
+      #popup img {
+        width: 30%;
+        margin: 1rem;
+        object-fit: contain;
+      }
+
+      #popup div {
+        display: flex;
+        flex-direction: column;
+        padding: 0.3rem;
+      }
+      #popup button {
+        color: black;
+        position: fixed;
+        font-weight: bolder;
+        cursor: pointer;
+        top: 3em;
+        left: 12em;
+      }
+
+      #popup article {
+        width: 60vw;
+        display: flex;
+        margin: 4rem auto;
+        border-radius: 25px;
+        padding: 12px;
+        background-color: white;
+        align-items: center;
+      }
+
+      footer {
+        text-align: center;
+        background-color: blue;
+        padding: 3em;
+        color: white;
+      }
+
+      footer a {
+        color: red;
+      }
+
+      @media only screen and (max-width: 600px) {
+        section {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 10px;
+        }
+        header button {
+          margin: 0.5rem;
+        }
+        h1 {
+          font-size: 5em;
+        }
+
+        h2 {
+          font-size: 3em;
+        }
+        #popup button {
+          top: 3em;
+          left: 30em;
+        }
+        #popup img {
+          display: none;
+        }
+      }
+    </style>
+
+    <div class="myDiv">
+      <header>
+        <h1><span>bistro</span> Babushka</h1>
+        <nav>
+          <button data-kategori="alle" class="valgt">Alle retter</button>
+          <button data-kategori="forretter">Forretter</button>
+          <button data-kategori="hovedretter">Hovedretter</button>
+          <button data-kategori="sideorders">Sideorders</button>
+          <button data-kategori="desserter">Desserter</button>
+          <button data-kategori="drikkevarer">Drikkevarer</button>
+        </nav>
+        <h2>Menu</h2>
+      </header>
+
+      <section></section>
+
+      <template>
+        <article id="menu">
+          <img src="" alt="" />
+          <div>
+            <h3></h3>
+            <p class="beskrivelse"></p>
+            <p class="pris"></p>
+            <button id="info">Mere info</button>
+          </div>
+        </article>
+      </template>
+
+      <section id="popup">
+        <button>X</button>
+        <article>
+          <img src="" alt="" />
+          <div>
+            <h3></h3>
+            <p class="langBeskrivelse"></p>
+            <p class="land"></p>
+            <p class="pris"></p>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <p>
+          bistro Babushka <br />
+          Kontakt os <br />
+          <a href="info@bistrobabushka.ru">info@bistrobabushka.ru</a>
+        </p>
+      </footer>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+
+      let header = document.querySelector("header h2");
+      let retter;
+      let filter = "alle";
+
+      function start() {
+        const filterKnapper = document.querySelectorAll("nav button");
+        filterKnapper.forEach((knap) =>
+          knap.addEventListener("click", filtrerPersoner)
+        );
+        hentData();
+      }
+
+      function filtrerPersoner() {
+        filter = this.dataset.kategori;
+        document.querySelector(".valgt").classList.remove("valgt");
+        this.classList.add("valgt");
+
+        visRetter();
+        header.textContent = this.textContent;
+      }
+
+      const url = "https://babushka-dd8a.restdb.io/rest/menu";
+      const options = {
+        headers: {
+          "x-apikey": "600ec2fb1346a1524ff12de4",
+        },
+      };
+      //hentData();
+      async function hentData() {
+        const respons = await fetch(url, options);
+        retter = await respons.json();
+        visRetter();
+      }
+      let md = "-md.jpg";
+      function visRetter() {
+        const container = document.querySelector("section");
+        const menu = document.querySelector("template");
+        container.textContent = "";
+        retter.forEach((ret) => {
+          if (filter == ret.kategori || filter == "alle") {
+            let klon = menu.cloneNode(true).content;
+
+            klon.querySelector("h3").textContent = ret.navn;
+            klon.querySelector(".beskrivelse").textContent =
+              ret.kortbeskrivelse;
+            klon.querySelector(".pris").textContent =
+              "Pris: " + ret.pris + ",-";
+            klon.querySelector("img").src = "medium/" + ret.billednavn + md;
+
+            klon
+              .querySelector("article #info")
+              .addEventListener("click", () => visRetten(ret));
+
+            container.appendChild(klon);
+          }
+        });
+
+        document
+          .querySelector("#popup button")
+          .addEventListener("click", lukPopup);
+
+        function lukPopup() {
+          document.querySelector("#popup").style.display = "none";
+        }
+        function visRetten(detaljer) {
+          const popup = document.querySelector("#popup");
+          popup.style.display = "block";
+          popup.querySelector("#popup h3").textContent = detaljer.navn;
+          popup.querySelector(".langBeskrivelse").textContent =
+            detaljer.langbeskrivelse;
+          popup.querySelector(".land").textContent =
+            "Oprindelsesregion: " + detaljer.oprindelsesregion;
+          popup.querySelector(".pris").textContent =
+            "Pris: " + detaljer.pris + ",-";
+          popup.querySelector("#popup img").src =
+            "medium/" + detaljer.billednavn + md;
+
+          console.log(detaljer);
+        }
+      }
+    </script>
+  </body>
+</html>
